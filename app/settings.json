@@ -1,0 +1,16 @@
+{
+  "name":"CMM",
+  "dev":{
+    "on":false,
+    "page":"agreement-bidder.html"
+  },
+  "auth":"123",
+  "apicon":"http://localhost:8080/api/",
+  "users":{
+    "VOGCH":{"group":"DEV"},
+    "MURRY":{"group":"DEV"}
+  },
+  "groups":{
+    "DEV":{"main":"main.html"}
+  }
+}

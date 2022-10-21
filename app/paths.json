@@ -1,0 +1,26 @@
+{
+  "deproot":"/Vogel - IM/dev/SharePoint/Vogel - Service/",
+  "settings":"/IMDB/cmm/settings.json",
+  "agreements":{
+    "root":"/Commercial Agreements/",
+    "folder":{
+      "open":"/Open/",
+      "new":"/New/",
+      "active":"/Active/"
+    }
+  },
+  "store":{
+    "root":"/IMDB/store/",
+    "oagreements":{
+      "file":"openagreements.db",
+      "ensure":{"fieldName":"id","unique":true}
+    },
+    "aagreements":{
+      "file":"activeagreements.db",
+      "ensure":{"fieldName":"id","unique":true}
+    }
+  },
+  "assets":{
+    "root":"/IMDB/assets/"
+  }
+}

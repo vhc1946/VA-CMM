@@ -1,0 +1,34 @@
+
+
+<div class="viewcontrol-menu">
+  <div>
+    <div class="viewcontrol-menu-item" title="CUSTOMER">Customer</div>
+    <div class="viewcontrol-menu-item" title="SITE">Site</div>
+  </div>
+</div>
+<div class="viewcontrol-port">
+  <div class="viewcontrol-port-item" title="CUSTOMER">
+    <div class="customer-edit-cinfo">
+        <div>Cust Code</div><input id="q-customer-id"/><!--Create searchable/drop list for optional autofill-->
+        <div>First Name</div><input id="q-customer-cfname"/>
+        <div>Last Name</div><input id="q-customer-clname"/>
+        <div>Phone</div><input id="q-customer-cphone"/>
+        <div>Email</div><input id="q-customer-cemail" type="email"/>
+    </div>
+  </div>
+  <div class="viewcontrol-port-item" title="SITE">
+    <div class="customer-edit-jinfo">
+        <div class="customer-header"><div>Job Info</div><div></div></div>
+        <div style="display:none;">Quote Number</div><input id="q-info-id" style="display:none";/><!--Create searchable/drop list for optional autofill-->
+        <div>Quote Name</div><input id="q-info-name"/>
+    </div>
+    <div class="customer-edit-jaddress">
+        <div class="customer-header"><div>Job Address</div><div></div></div>
+        <div>Street</div><input id="q-info-street"/>
+        <div>Unit</div><input id="q-info-unit"/>
+        <div>City</div><input id="q-info-city"/>
+        <div>State</div><input id="q-info-state"/>
+        <div>Zip</div><input id="q-info-zip"/>
+    </div>
+  </div>
+</div>

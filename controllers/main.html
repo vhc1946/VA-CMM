@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <link rel="stylesheet" href="../bin/gui/styles/main-styles.css"/>
+      <link rel="stylesheet" href="../bin/repo/gui/styles/modules/vg-floatviews.css"/>
+    </head>
+    <body>
+      <div id="quote-center" class="vg-float-frame">
+        <div class="vg-float-view" title="New Bid">
+            <div>
+              <div class="newbid-header">NEW BID INFO</div>
+              <div class="newbid-body">
+                <div class='newbid-area-job'>
+                  <div style="color:red;">Job Name:</div><input id="newbid-jobname"/>
+                </div>
+                <div class='newbid-area-client'>
+                  <div>Business Name:</div><input id="newbid-busname"/>
+                  <div>Primary Contact:</div><input id="newbid-contact-name"/>
+                  <div>Contact Phone:</div><input id="newbid-contact-phone"/>
+                  <div>Contact Email:</div><input id="newbid-contact-email"/>
+                </div>
+              </div>
+              <div class="newbid-buttons">
+                <div class="flat-action-button" id="submit-new-bid">SUBMIT</div>
+              </div>
+            </div>
+        </div>
+        <img id="vg-float-frame-close" src="../bin/repo/assets/icons/cross.png"/>
+      </div>
+
+      <div id="dash-container">
+          <div id="dash-quote-table-descrs">
+              <div id="quote-table-filters">
+                  <div>Business</div><input id="quote-filter-business" type="search"/>
+                  <div>Consultant</div><input type="search" id="quote-filter-consultant" class="dash-quote-table-filter"/>
+                  <div>Address</div><input type="search" id="quote-filter-address"/>
+                  <div>Period</div><div id="dash-quote-period-search"><input type="date" id="quote-filter-fromdate"/>
+                    - <input type="date" id="quote-filter-todate"/></div>
+              </div>
+          </div>
+          <div id="tracker-metrics-cont">
+
+          </div>
+      </div>
+
+           <!--BID TABLES----------------------------------->
+           <div id="bid-tables-container" class="viewcontrol-cont">
+            <div class="viewcontrol-menu">
+              <div></div>
+              <div class="vc-quick-actions">
+                <span class="icon-action-button"><img id="bid-action-new" class="vc-actionbutton" title="Create New" src="../bin/repo/assets/icons/open-new.png"/></span>
+                <span class="icon-action-button"><img id="bid-action-resume" class="vc-actionbutton" title="Open Last" src="../bin/repo/assets/icons/open-last.png"/></span>
+              </div>
+            </div>
+            <div id="bid-tables" class="viewcontrol-port">
+            </div>
+        </div>
+    </body>
+    <script>
+      var {writePart} = require('../bin/repo/gui/js/tools/vg-partials.js');
+      writePart(__dirname + '/parts/vg-heads.txt',document.head);
+      writePart(__dirname + '/parts/vg-notelist.txt',document.body,'vg-toast-tr',true);// VG NOTELIST / TR NOTES PARTIAL
+    </script>
+    <script src='../bin/gui/main.js'></script>
+</html>

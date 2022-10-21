@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <link rel="stylesheet" type="text/css" href="../bin/repo/gui/styles/layouts/vg-stdbook.css"/>
+      <link rel="stylesheet" type="text/css" href="../bin/gui/styles/tab-project.css"/>
+
+    </head>
+    <body>
+      <div id="agreebid-cont" class="vg-stdbook-cont">
+        <!--PAGES AND NAVIGATION CONTAINER ------------------------->
+        <div class="vg-stdbook-pages">
+            <!--SIDE BAR LEFT
+                Left side bar will hold items that are not in view, but can be
+                selected. When an item is selected, it and everything to the
+                right of it in the list are hidden and made visible in the
+                right side bar.
+            -->
+            <div class="vg-stdbook-cont-sidenav vg-stdbook-cont-sidenav-left">
+                <div class="vg-stdbook-cont-sidenav-button cmm-info-button" style="display:none;">ACCOUNT INFO</div>
+                <div class="vg-stdbook-cont-sidenav-button cmm-servitems-button" style="display:none;">SERVICE ITEMS</div>
+                <div class="vg-stdbook-cont-sidenav-button cmm-bid-button" style="display:none">BID</div>
+                <div class="vg-stdbook-cont-sidenav-button cmm-summary-button" style="display:none">SUMMARY</div>
+            </div>
+
+            <!--VIEW CONTAINER -------------------------------------------------------------->
+            <div class="vg-stdbook-cont-views">
+
+                <!--CLIENT VIEW / BUILT IN PATRIAL ------------------------------------------->
+                <div id="cmm-build-info">
+                    <!-- <script>
+                        require('../bin/repo/gui/js/tools/vg-partials.js').writePart(__dirname + '/parts/tab-project.txt',
+                                                                            document.getElementById('cmm-build-info'),
+                                                                            'build-info-edit', true);
+                    </script> -->
+                </div>
+                <!--------------------------------------------------------------------------->
+
+                <!--SYSTEMS VIEW ------------------------------------------------------------>
+                <div id="cmm-build-servitems" style="display: none;">
+                </div>
+                <!--------------------------------------------------------------------------->
+
+
+                <!--ACCESSORIES VIEW / BUILT IN PATRIAL ------------------------------------->
+                <div id="cmm-build-bid" style="display: none;">
+                </div>
+                <!--------------------------------------------------------------------------->
+
+
+                <!--SUMMARY VIEW / BUILT IN PARTIAL ----------------------------------------->
+                <div id="cmm-build-summary" style="display: none;">
+                </div>
+                <!--------------------------------------------------------------------------->
+            </div>
+
+            <!--SIDE BAR RIGHT --------------------------------------------------------------
+                The right side bar holds the current view. If the current view is selected,
+                nothing should happen. If a view behind (to the right) of the visible view
+                is selected, then every button to the left of it is moved to the left side
+                bar, leaving the current view furthest left (in the right side bar) and
+                other views behind it still exposed.
+            -->
+            <div class="vg-stdbook-cont-sidenav vg-stdbook-cont-sidenav-right">
+                <div class="vg-stdbook-cont-sidenav-button cmm-info-button vg-stdbook-cont-sidenav-button-selected">ACCOUNT INFO</div>
+                <div class="vg-stdbook-cont-sidenav-button cmm-servitems-button">SERVICE ITEMS</div>
+                <div class="vg-stdbook-cont-sidenav-button cmm-bid-button">BID</div>
+                <div class="vg-stdbook-cont-sidenav-button cmm-summary-button">SUMMARY</div>
+            </div>
+            <!------------------------------------------------------------------------------->
+        </div>
+        <!----------------------------------------------------------------------------------->
+      </div>
+
+      <!-- Ref Lists ------>
+      <div id="validation-list">
+      </div>
+    </body>
+    <script>
+      var {writePart} = require('../bin/repo/gui/js/tools/vg-partials.js');
+      writePart(__dirname + '/parts/vg-heads.txt',document.head);
+      writePart(__dirname + '/parts/vg-notelist.txt',document.body,'vg-toast-tr',true);// VG NOTELIST / TR NOTES PARTIAL
+    </script>
+
+    </script>
+    <script src="../bin/gui/agreebid.js"></script>
+</html>
