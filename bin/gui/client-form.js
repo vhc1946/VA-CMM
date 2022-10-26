@@ -3,16 +3,17 @@ var CREATEprojectforms=(curragree)=>{   // Sets up layout using ViewControl
     block.id = 'build-info-edit';
     vcontrol.SETUPviews(block,'mt');
     
-
     cont = document.createElement('div');
     cont.id = 'CLIENT';
     vcontrol.ADDview('CLIENT',cont,block,false);
     cont.appendChild(CREATEinputform(curragree.customer,'client'));
 
+    let projectinclude = ["name","street","unit","city","state","zip"];  // Fields to include for Project tab
+
     cont = document.createElement('div');
     cont.id = 'PROJECT';
     vcontrol.ADDview('PROJECT',cont,block,false);
-    cont.appendChild(CREATEjobform(curragree));
+    cont.appendChild(CREATEinputform(curragree,'project',projectinclude,true));
 
     return block;
 }
@@ -30,17 +31,26 @@ var NEWvcsetup=()=>{
     return vcblock;
 }
 
-var CREATEinputform=(data,type)=>{   // Generic function to create input form based on data's structure
+var CREATEinputform=(data,type,compare=[],include=false)=>{   // Generic function to create input form based on data's structure
     let ins = document.createElement('div');
     ins.classList.add(`${type}-info-cont`)
     for(let eg in data){
-        ins.appendChild(document.createElement('label'));
-        ins.lastChild.innerText = eg;
-        ins.appendChild(document.createElement('input'));
-        ins.lastChild.classList.add(`${type}-${eg}`);
+        if(include){
+            if(compare.includes(eg)){CREATEinputfield(ins,eg,type);}
+        }else{
+            if(!compare.includes(eg)){CREATEinputfield(ins,eg,type);}
+        }
     }
     return ins;
 }
+
+var CREATEinputfield=(cont,eg,type)=>{
+    cont.appendChild(document.createElement('label'));
+    cont.lastChild.innerText = toTitleCase(eg);
+    cont.appendChild(document.createElement('input'));
+    cont.lastChild.classList.add(`${type}-${eg}`);
+}
+
 
 var CREATEjobform=(curragree)=>{
     let ins = document.createElement('div');
@@ -77,6 +87,13 @@ var CREATEjobform=(curragree)=>{
     ins.lastChild.classList.add(`project-zip`);
 
     return ins;
+}
+
+function toTitleCase(str) {
+    var lcStr = str.toLowerCase();
+    return lcStr.replace(/(?:^|\s)\w/g, function(match) {
+    return match.toUpperCase();
+    });
 }
 
 module.exports={
