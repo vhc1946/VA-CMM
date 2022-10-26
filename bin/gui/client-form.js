@@ -1,8 +1,14 @@
+
+//account includes
+  //customer
+  //address
+//site includes
+
 var CREATEprojectforms=(curragree)=>{   // Sets up layout using ViewControl
     let block = NEWvcsetup();
     block.id = 'build-info-edit';
     vcontrol.SETUPviews(block,'mt');
-    
+
     cont = document.createElement('div');
     cont.id = 'CLIENT';
     vcontrol.ADDview('CLIENT',cont,block,false);
@@ -27,7 +33,7 @@ var NEWvcsetup=()=>{
     vcblock.lastChild.appendChild(document.createElement('div'));
     vcblock.appendChild(document.createElement('div'));
     vcblock.lastChild.classList.add('viewcontrol-port');
-  
+
     return vcblock;
 }
 
@@ -60,7 +66,7 @@ var CREATEjobform=(curragree)=>{
     ins.lastChild.innerText = "Project Name";
     ins.appendChild(document.createElement('input'));
     ins.lastChild.classList.add(`project-name`);
-    
+
     ins.appendChild(document.createElement('label'));
     ins.lastChild.innerText = "Street";
     ins.appendChild(document.createElement('input'));
@@ -70,12 +76,12 @@ var CREATEjobform=(curragree)=>{
     ins.lastChild.innerText = "Unit";
     ins.appendChild(document.createElement('input'));
     ins.lastChild.classList.add(`project-unit`);
-    
+
     ins.appendChild(document.createElement('label'));
     ins.lastChild.innerText = "City";
     ins.appendChild(document.createElement('input'));
     ins.lastChild.classList.add(`project-city`);
-    
+
     ins.appendChild(document.createElement('label'));
     ins.lastChild.innerText = "State";
     ins.appendChild(document.createElement('input'));
